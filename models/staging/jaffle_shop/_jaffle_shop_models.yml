@@ -7,7 +7,7 @@ models:
         tests:
           - unique
           - not_null
-  
+
   - name: stg_jaffle_shop_orders
     config:
       materialized: view
@@ -19,7 +19,8 @@ models:
       - name: status
         tests:
           - accepted_values:
-              values: ['completed', 'shipped', 'returned', 'placed', 'return_pending']
+              values:
+                ["completed", "shipped", "returned", "placed", "return_pending"]
       - name: customer_id
         tests:
           - relationships:
